@@ -1,12 +1,16 @@
+import { MessagePanel } from '@/components/MessagePanel'
+
 export default function Chat() {
+  const onSubmit = (data: { message: string }) => {
+    // eslint-disable-next-line no-console -- placeholder until API wired
+    console.log('submit', data)
+  }
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
-      <div className="max-w-2xl w-full">
-        <h1 className="text-4xl font-bold mb-6">Chat</h1>
-        <div className="space-y-4 text-gray-300">
-          <p>Chat functionality coming soon.</p>
-        </div>
+    <div className="flex flex-1 flex-col min-h-0 p-4">
+      <div className="flex-1 overflow-auto min-h-0">
+        <p className="text-muted">Messages</p>
       </div>
+      <MessagePanel onSubmit={onSubmit} />
     </div>
   )
 }
