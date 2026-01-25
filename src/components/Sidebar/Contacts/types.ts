@@ -10,4 +10,5 @@ export interface Contact {
 
 export interface ContactItemProps {
   contact: Contact
+  isActive?: boolean
 }

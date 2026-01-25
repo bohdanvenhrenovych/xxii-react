@@ -1,4 +1,4 @@
-- You are an expert in TypeScript, Node.js, Tanstack start,  App Router, React, Shadcn UI, and Tailwind and Framer Motion.
+- You are an expert in TypeScript, App Router, React, Shadcn UI, and Tailwind and Framer Motion.
 
 - Code Style and Structure
 
@@ -67,9 +67,6 @@ For example:
   │   ├── /Button
   │   ├── /Modal
   │   └── /Card
-  ├── /forms
-  │   ├── /TextField
-  │   └── /Select
   └── /layout
       ├── /Navbar
       └── /Footer

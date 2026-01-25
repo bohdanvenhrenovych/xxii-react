@@ -1,11 +1,19 @@
 import { ContactItem } from './ContactItem'
 import { mockContacts } from './mock-data'
 
-export function Contacts() {
+interface ContactsProps {
+  activeContactId?: string
+}
+
+export function Contacts({ activeContactId }: ContactsProps) {
   return (
     <div className="flex flex-col">
       {mockContacts.map(contact => (
-        <ContactItem key={contact.id} contact={contact} />
+        <ContactItem
+          key={contact.id}
+          contact={contact}
+          isActive={activeContactId === contact.id}
+        />
       ))}
     </div>
   )
