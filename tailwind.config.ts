@@ -31,6 +31,7 @@ export default {
       fontSize: {
         xs: '11px',
         sm: '12px',
+        '13': '13px',
         base: '14px',
         md: '16px',
         lg: '18px',
@@ -58,6 +59,7 @@ export default {
         'right-sidebar': '400px',
       },
       borderRadius: {
+        sm: '4px',
         none: '0',
       },
       borderWidth: {
@@ -75,6 +77,7 @@ export default {
         secondary: '#1A1A1A',
         tertiary: '#2a2a2a',
         elevated: '#1f1f1f',
+        success: '#10B981',
       },
       borderColor: {
         DEFAULT: '#333333',
@@ -85,6 +88,8 @@ export default {
         primary: '#10B981',
         secondary: '#C5CCC5',
         muted: '#808080',
+        foreground: '#D5D5D5',
+        'success-foreground': '#090A0C',
       },
       transitionDuration: {
         fast: '100ms',
