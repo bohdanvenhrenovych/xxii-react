@@ -14,13 +14,8 @@ export function BracketedText({
   ...props
 }: BracketedTextProps) {
   return (
-    <Typography
-      variant="itemName"
-      wrap={false}
-      className={clsx('flex-1', className)}
-      {...props}
-    >
-      [{children}]
+    <Typography wrap={false} className={clsx('flex-1', className)} {...props}>
+      [<span className="px-0.5">{children}</span>]
     </Typography>
   )
 }
