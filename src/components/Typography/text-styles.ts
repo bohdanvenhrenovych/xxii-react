@@ -17,7 +17,7 @@ export const textStyles = {
   badge: {
     className: 'bg-primary/20 px-1.5 py-0.5 rounded text-xs font-medium',
     size: 'xs',
-    defaultColor: 'primary',
+    defaultColor: 'primary-foreground',
   },
 } as const
 

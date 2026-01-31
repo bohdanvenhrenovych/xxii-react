@@ -7,7 +7,7 @@ interface ContactsProps {
 
 export function Contacts({ activeContactId }: ContactsProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-1">
       {mockContacts.map(contact => (
         <ContactItem
           key={contact.id}

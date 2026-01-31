@@ -1,47 +1,60 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react'
-import { clsx } from 'clsx'
-import { BracketedText } from './bracketed-text'
+import * as React from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { Slot } from 'radix-ui'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'success'
-  size?: 'sm' | 'md' | 'lg'
-}
+import { classNames } from '@/lib/utils'
 
-const variantStyles = {
-  primary: 'bg-status-online text-foreground',
-  secondary: 'bg-card text-secondary',
-  outline: 'border border-border bg-transparent text-secondary',
-  danger: 'bg-status-dnd text-foreground',
-  ghost: 'bg-transparent text-foreground hover:bg-white/5',
-  success: 'bg-success text-success-foreground rounded-md hover:opacity-90',
-} as const
-
-const sizeStyles = {
-  sm: 'px-0.5 py-0.5 text-13',
-  md: 'px-3 py-1.5 text-sm',
-  lg: 'px-4 py-2 text-base',
-} as const
-
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { className, variant = 'primary', size = 'sm', children, ...props },
-    ref
-  ) => {
-    return (
-      <button
-        ref={ref}
-        className={clsx(
-          'cursor-pointer inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50',
-          variantStyles[variant],
-          sizeStyles[size],
-          className
-        )}
-        {...props}
-      >
-        <BracketedText>{children}</BracketedText>
-      </button>
-    )
+const buttonVariants = cva(
+  "cursor-pointer hover:opacity-80 focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-none border border-transparent bg-clip-padding text-xs font-medium focus-visible:ring-1 aria-invalid:ring-1 [&_svg:not([class*='size-'])]:size-4 inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none",
+  {
+    variants: {
+      variant: {
+        default: 'bg-primary text-primary-foreground rounded-sm',
+        ghost: 'text-foreground',
+        link: 'text-primary underline-offset-4 hover:underline',
+      },
+      size: {
+        default: 'px-0.5 py-0.5 text-base',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
   }
 )
 
-Button.displayName = 'Button'
+function Button({
+  className,
+  variant = 'default',
+  size = 'default',
+  asChild = false,
+  children,
+  isBracketed = true,
+  ...props
+}: React.ComponentProps<'button'> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean
+    isBracketed?: boolean
+  }) {
+  const Comp = asChild ? Slot.Root : 'button'
+
+  return (
+    <Comp
+      data-slot="button"
+      data-variant={variant}
+      data-size={size}
+      className={classNames(buttonVariants({ variant, size, className }))}
+      {...props}
+    >
+      {isBracketed && (
+        <span className="px-0.5">
+          [<span className="px-0.5">{children}</span>]
+        </span>
+      )}
+      {!isBracketed && children}
+    </Comp>
+  )
+}
+
+export { Button, buttonVariants }

@@ -1,25 +1,18 @@
-import { TextareaHTMLAttributes, forwardRef } from 'react'
-import { clsx } from 'clsx'
+import * as React from 'react'
 
-type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>
+import { classNames } from '@/lib/utils'
 
-export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <textarea
-        ref={ref}
-        className={clsx(
-          'w-full resize-y p-1 text-13 max-h-[240px]',
-          'bg-secondary text-foreground placeholder:text-secondary',
-          'outline-none transition-colors border border-secondary',
-          'focus-visible:ring-2 focus-visible:ring-border-primary focus-visible:ring-inset',
-          'disabled:pointer-events-none disabled:opacity-50',
-          className
-        )}
-        {...props}
-      />
-    )
-  }
-)
+function Textarea({ className, ...props }: React.ComponentProps<'textarea'>) {
+  return (
+    <textarea
+      data-slot="textarea"
+      className={classNames(
+        'dark:bg-input/30 focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 disabled:bg-input/50 dark:disabled:bg-input/80 rounded-sm border bg-input px-2.5 py-2 text-base text-foreground transition-colors focus-visible:ring-1 aria-invalid:ring-1 placeholder:text-base placeholder:text-secondary flex field-sizing-content min-h-16 w-full outline-none disabled:cursor-not-allowed disabled:opacity-50',
+        className
+      )}
+      {...props}
+    />
+  )
+}
 
-Textarea.displayName = 'Textarea'
+export { Textarea }

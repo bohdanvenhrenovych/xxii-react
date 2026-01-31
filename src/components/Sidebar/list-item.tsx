@@ -16,7 +16,7 @@ export interface SidebarListItemProps {
 
 const rowClassName = (isActive: boolean) =>
   classNames(
-    'flex items-center gap-2 border-l-2 cursor-pointer transition-colors pl-2 block no-underline text-inherit',
+    'flex items-center gap-3 border-l-2 cursor-pointer transition-colors pl-2 no-underline text-inherit',
     'hover:bg-card-hover',
     isActive ? 'border-accent-orange bg-card-hover' : 'border-transparent'
   )
@@ -31,11 +31,11 @@ export function SidebarListItem({
 }: SidebarListItemProps) {
   const content = (
     <>
-      <div className="flex-shrink-0 flex items-center gap-1">{icon}</div>
+      <div className="shrink-0 flex items-center gap-3">{icon}</div>
       <Typography variant="itemName" wrap={false} className="flex-1">
         {label}
       </Typography>
-      <div className="flex items-center gap-2 ml-auto">
+      <div className="flex items-center gap-3 ml-auto">
         {unreadCount != null && unreadCount > 0 && (
           <span className="bg-primary/20 text-primary px-1.5 py-0.5 rounded text-xs font-medium">
             {unreadCount}
