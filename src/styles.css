@@ -1,5 +1,77 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
 @config "../tailwind.config.ts";
 
 /* XXII Chat Terminal Design System */
-@import './styles/global.css';
+:root {
+  --background: #090a0c;
+  --foreground: #d5d5d5;
+  --card: #1a242d;
+  --card-foreground: #d5d5d5;
+  --card-alt: #182b29;
+  --card-hover: rgba(19, 23, 26, 0.698);
+  --popover: #1a242d;
+  --popover-foreground: #d5d5d5;
+  --primary: #10b981;
+  --primary-foreground: #090a0c;
+  --secondary: #c5ccc5;
+  --secondary-foreground: #090a0c;
+  --accent: #182b29;
+  --accent-foreground: #d5d5d5;
+  --accent-yellow: #d7d132;
+  --accent-orange: #ff6100;
+  --destructive: #ff3b30;
+  --destructive-foreground: #d5d5d5;
+  --border: #1a1a1a;
+  --input: #141414;
+  --ring: #c5ccc5;
+  --radius: 0;
+  --status-online: #10b981;
+  --status-away: #d7d132;
+  --status-dnd: #ff6100;
+  --status-offline: #808080;
+}
+
+@theme inline {
+  --font-fira-code: 'Fira Code', monospace;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-orange: var(--accent-orange);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-card-alt: var(--card-alt);
+  --color-card-hover: var(--card-hover);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-status-online: var(--status-online);
+  --color-status-away: var(--status-away);
+  --color-status-dnd: var(--status-dnd);
+  --color-status-offline: var(--status-offline);
+  --radius-sm: 4px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply font-fira-code bg-background text-foreground;
+  }
+  html {
+    @apply font-fira-code;
+  }
+}

@@ -7,7 +7,7 @@ interface ChatsProps {
 
 export function Chats({ activeChatId }: ChatsProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-1">
       {mockChats.map(chat => (
         <ChatItem
           key={chat.id}

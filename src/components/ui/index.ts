@@ -1,5 +1,5 @@
 export { Button } from './button'
 export { Link } from './link'
-export { Divider } from './divider'
-export { BracketedText } from './bracketed-text'
+export { Separator } from './separator'
+export { ReactionButton } from './reaction-button'
 export { Textarea } from './textarea'
