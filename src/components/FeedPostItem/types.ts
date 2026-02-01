@@ -1,7 +1,6 @@
-export interface Reaction {
-  icon: string
-  qty: number
-}
+import type { Reaction } from '@/views/chat/types'
+
+export type { Reaction }
 
 export interface FeedPost {
   id: string
@@ -11,8 +10,7 @@ export interface FeedPost {
   publishedAt: string
   content: string
   repliesCount: number
-  /** reactionId → Reaction */
-  reactions: Record<string, Reaction>
+  reactions: Reaction[]
 }
 
 export interface FeedPostItemProps {

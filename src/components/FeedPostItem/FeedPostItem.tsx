@@ -4,12 +4,12 @@ import { classNames, truncateText } from '@/lib/utils'
 import { Typography } from '../Typography'
 import { CONTENT_MAX_LENGTH } from './constants'
 import { FeedPostEngagement } from './FeedPostEngagement'
-import type { FeedPostItemProps, Reaction } from './types'
+import type { FeedPostItemProps } from './types'
 
 export function FeedPostItem({ post, className }: FeedPostItemProps) {
   const raw: string = post?.content ?? ''
   const content: string = truncateText(raw, CONTENT_MAX_LENGTH)
-  const reactions = post?.reactions ?? {}
+  const reactions = post?.reactions ?? []
 
   return (
     <div
