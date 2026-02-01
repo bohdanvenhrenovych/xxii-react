@@ -5,7 +5,7 @@ import { Chats } from './Chats'
 import { Contacts } from './Contacts'
 import { Feeds } from './Feeds'
 import { Folders } from './Folders'
-import { Divider } from '../ui/divider'
+import { Separator } from '../ui/separator'
 
 export function Sidebar() {
   const { contactId, feedId, chatId, folderId, itemId } = useParams<{
@@ -21,23 +21,23 @@ export function Sidebar() {
       <Section title="CONTACTS">
         <Contacts activeContactId={contactId} />
       </Section>
-      <Divider className="my-1" />
+      <Separator className="my-1" />
 
       <Section title="FEEDS">
         <Feeds activeFeedId={feedId} />
       </Section>
 
-      <Divider className="my-1" />
+      <Separator className="my-1" />
 
       <Section title="CHATS">
         <Chats activeChatId={chatId} />
       </Section>
-      <Divider className="my-1" />
+      <Separator className="my-1" />
 
       <Section title="FOLDERS">
         <Folders activeFolderId={folderId} activeItemId={itemId} />
       </Section>
-      <Divider className="my-1" />
+      <Separator className="my-1" />
     </aside>
   )
 }

@@ -57,9 +57,7 @@ export function MessagePanel({
             poll
           </Button>
         </div>
-        <Button variant="success" type="submit">
-          send
-        </Button>
+        <Button type="submit">send</Button>
       </div>
     </Form>
   )

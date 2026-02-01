@@ -45,7 +45,7 @@ export function FolderChildRow({
     return (
       <Link
         to={to}
-        className={classNames(rowClass, 'block no-underline text-inherit')}
+        className={classNames(rowClass, 'no-underline text-inherit')}
       >
         {content}
       </Link>

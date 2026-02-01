@@ -2,16 +2,14 @@ import { emojify } from '@/lib/emoji'
 import { classNames, truncateText } from '@/lib/utils'
 
 import { Typography } from '../Typography'
+import { CONTENT_MAX_LENGTH } from './constants'
+import { FeedPostEngagement } from './FeedPostEngagement'
 import type { FeedPostItemProps, Reaction } from './types'
-
-const contentMaxLength = 120
-const repliesSymbol = '💬'
 
 export function FeedPostItem({ post, className }: FeedPostItemProps) {
   const raw: string = post?.content ?? ''
-  const content: string = truncateText(raw, contentMaxLength)
-  const reactions = post?.reactions ?? ({} as Record<string, Reaction>)
-  const reactionEntries = Object.entries(reactions)
+  const content: string = truncateText(raw, CONTENT_MAX_LENGTH)
+  const reactions = post?.reactions ?? {}
 
   return (
     <div
@@ -26,9 +24,10 @@ export function FeedPostItem({ post, className }: FeedPostItemProps) {
       <Typography
         variant="timestamp"
         color="secondary"
-        className="flex items-center gap-2"
+        className="flex items-center gap-1"
+        size="sm"
       >
-        <Typography variant="timestamp" color="primary">
+        <Typography variant="timestamp" size="sm" color="primary">
           {post.author}
         </Typography>
         · {post.publishedAt}
@@ -37,23 +36,10 @@ export function FeedPostItem({ post, className }: FeedPostItemProps) {
       <Typography variant="timestamp" color="secondary" size="sm">
         {content}
       </Typography>
-      <div className="flex items-center gap-4 text-secondary">
-        <span className="flex items-center gap-1">
-          <span aria-hidden>{repliesSymbol}</span>
-          <Typography variant="timestamp" color="secondary">
-            {post.repliesCount} replies
-          </Typography>
-        </span>
-
-        {reactionEntries.map(([reactionId, entry]: [string, Reaction]) => (
-          <span key={reactionId} className="flex items-center gap-1">
-            <span aria-hidden>{entry.icon}</span>
-            <Typography variant="timestamp" color="secondary">
-              {entry.qty}
-            </Typography>
-          </span>
-        ))}
-      </div>
+      <FeedPostEngagement
+        repliesCount={post.repliesCount}
+        reactions={reactions}
+      />
     </div>
   )
 }
