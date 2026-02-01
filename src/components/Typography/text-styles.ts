@@ -47,4 +47,9 @@ export const statusColors = {
 export type TextStyleVariant = keyof typeof textStyles
 export type StatusColor = keyof typeof statusColors
 
-export type TextColor = 'primary' | 'secondary' | 'muted' | 'white'
+export type TextColor =
+  | 'primary'
+  | 'secondary'
+  | 'muted'
+  | 'white'
+  | 'foreground'
