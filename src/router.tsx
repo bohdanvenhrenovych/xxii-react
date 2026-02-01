@@ -3,6 +3,7 @@ import { createBrowserRouter, Link, Navigate } from 'react-router-dom'
 import { ChatLayout } from './components/ChatLayout'
 import { paths } from './routes/paths'
 import Chat from './routes/chat'
+import Feed from './routes/feed'
 
 function NotFound() {
   return (
@@ -39,7 +40,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'chat/feeds/:feedId',
-        element: <Chat />,
+        element: <Feed />,
       },
       {
         path: 'chat/chats/:chatId',
