@@ -29,7 +29,8 @@ export function Typography({
 }: TypographyProps) {
   const variantStyle = variant ? textStyles[variant] : undefined
   const variantClass = variantStyle?.className
-  const sizeClass = size ? fontSizeMap[size] : undefined
+  const resolvedSize = size ?? variantStyle?.size
+  const sizeClass = resolvedSize ? fontSizeMap[resolvedSize] : undefined
 
   const resolvedColor = color || variantStyle?.defaultColor
   const colorClass = resolvedColor ? `text-${resolvedColor}` : undefined

@@ -11,7 +11,7 @@ interface SectionProps {
 export function Section({ title, children, className = '' }: SectionProps) {
   return (
     <div className={classNames('flex flex-col px-2', className)}>
-      <Typography variant="heading3" className="">
+      <Typography variant="heading3" size="md" className="">
         {title}
       </Typography>
       {children}

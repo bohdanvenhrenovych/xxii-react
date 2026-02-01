@@ -1,21 +1,26 @@
 export const textStyles = {
+  heading2: {
+    className: 'text-primary font-medium',
+    size: 'md',
+    defaultColor: 'primary',
+  },
   heading3: {
     className: 'font-bold uppercase tracking-wide',
     size: 'sm',
     defaultColor: 'secondary',
   },
   itemName: {
-    className: 'text-base',
+    className: '',
     size: 'base',
     defaultColor: 'primary',
   },
   timestamp: {
-    className: 'text-xs',
+    className: '',
     size: 'xs',
     defaultColor: 'secondary',
   },
   badge: {
-    className: 'bg-primary/20 px-1.5 py-0.5 rounded text-xs font-medium',
+    className: 'bg-primary/20 px-1.5 py-0.5 rounded font-medium',
     size: 'xs',
     defaultColor: 'primary',
   },
