@@ -1,4 +1,5 @@
 import { Typography } from '@/components/Typography'
+import { formatTimestamp } from '@/lib/utils'
 import { Undo2Icon } from 'lucide-react'
 import { ForwardedMessage } from '../types'
 
@@ -23,7 +24,7 @@ export function ForwardedMessageBlock({
       </div>
       <div className="text-xs text-secondary px-2">
         from #{forwardedMessage.from} ({forwardedMessage.originalSender},{' '}
-        {forwardedMessage.timestamp})
+        {formatTimestamp(forwardedMessage.timestamp)})
       </div>
     </div>
   )

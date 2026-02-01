@@ -10,3 +10,9 @@ export function truncateText(text: string, maxLength: number): string {
   if (trimmed.length <= maxLength) return trimmed
   return trimmed.slice(0, maxLength).trimEnd() + '…'
 }
+
+/** Format ISO 8601 timestamp for display (e.g. "12:41"). */
+export function formatTimestamp(iso: string): string {
+  const d = new Date(iso)
+  return d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })
+}

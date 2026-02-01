@@ -1,4 +1,5 @@
 import { Typography } from '@/components/Typography'
+import { formatTimestamp } from '@/lib/utils'
 import { MessageReactions } from '@/components/ui/message-reactions'
 import { AttachmentBlock } from './attachment-block'
 import { ForwardedMessageBlock } from './forwarded-message-block'
@@ -15,7 +16,9 @@ export function MessageItem({ message, onReactionClick }: MessageItemProps) {
     <div className="p-1 hover:bg-card/30">
       <div className="flex gap-2">
         <div className="w-15">
-          <Typography variant="timestamp">{message.timestamp}</Typography>
+          <Typography variant="timestamp">
+            {formatTimestamp(message.timestamp)}
+          </Typography>
         </div>
         <div className="flex-1 min-w-0 flex flex-col gap-1">
           <div className="flex gap-3">

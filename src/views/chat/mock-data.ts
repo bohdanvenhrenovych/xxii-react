@@ -4,7 +4,7 @@ export const mockMessages: Message[] = [
   {
     id: '1',
     sender: 'timur',
-    timestamp: '12:41',
+    timestamp: '2026-01-21T12:41:00.000000Z',
     content:
       'Hey team, just pushed the new terminal UI design. What do you think?',
     reactions: [
@@ -16,19 +16,19 @@ export const mockMessages: Message[] = [
   {
     id: '2',
     sender: 'alex',
-    timestamp: '12:38',
+    timestamp: '2026-01-21T12:38:00.000000Z',
     content: 'The keyboard shortcuts are working perfectly now',
     reactions: [{ emoji: '✅', count: 2 }],
   },
   {
     id: '3',
     sender: 'sarah',
-    timestamp: '12:35',
+    timestamp: '2026-01-21T12:35:00.000000Z',
     content: 'Can we review the search implementation today?',
     forwardedMessage: {
       from: 'dev',
       originalSender: 'timur',
-      timestamp: '12:10',
+      timestamp: '2026-01-21T12:10:00.000000Z',
       content: 'textsdfsdasdfasdfasdf',
     },
     replyCount: 2,
@@ -36,7 +36,7 @@ export const mockMessages: Message[] = [
   {
     id: '4',
     sender: 'mike',
-    timestamp: '12:30',
+    timestamp: '2026-01-21T12:30:00.000000Z',
     content: 'Here are the updated specs',
     attachment: {
       name: 'report.pdf',
@@ -47,14 +47,14 @@ export const mockMessages: Message[] = [
   {
     id: '5',
     sender: 'timur',
-    timestamp: '12:15',
+    timestamp: '2026-01-21T12:15:00.000000Z',
     content: 'Remember to update your status before leaving',
   },
 
   {
     id: '1',
     sender: 'timur',
-    timestamp: '12:41',
+    timestamp: '2026-01-21T12:41:00.000000Z',
     content:
       'Hey team, just pushed the new terminal UI design. What do you think?',
     reactions: [
@@ -66,19 +66,19 @@ export const mockMessages: Message[] = [
   {
     id: '2',
     sender: 'alex',
-    timestamp: '12:38',
+    timestamp: '2026-01-21T12:38:00.000000Z',
     content: 'The keyboard shortcuts are working perfectly now',
     reactions: [{ emoji: '✅', count: 2 }],
   },
   {
     id: '3',
     sender: 'sarah',
-    timestamp: '12:35',
+    timestamp: '2026-01-21T12:35:00.000000Z',
     content: 'Can we review the search implementation today?',
     forwardedMessage: {
       from: 'dev',
       originalSender: 'timur',
-      timestamp: '12:10',
+      timestamp: '2026-01-21T12:10:00.000000Z',
       content: 'textsdfsdasdfasdfasdf',
     },
     replyCount: 2,
@@ -86,7 +86,7 @@ export const mockMessages: Message[] = [
   {
     id: '4',
     sender: 'mike',
-    timestamp: '12:30',
+    timestamp: '2026-01-21T12:30:00.000000Z',
     content: 'Here are the updated specs',
     attachment: {
       name: 'report.pdf',
@@ -97,14 +97,14 @@ export const mockMessages: Message[] = [
   {
     id: '5',
     sender: 'timur',
-    timestamp: '12:15',
+    timestamp: '2026-01-21T12:15:00.000000Z',
     content: 'Remember to update your status before leaving',
   },
 
   {
     id: '1',
     sender: 'timur',
-    timestamp: '12:41',
+    timestamp: '2026-01-21T12:41:00.000000Z',
     content:
       'Hey team, just pushed the new terminal UI design. What do you think?',
     reactions: [
@@ -116,19 +116,19 @@ export const mockMessages: Message[] = [
   {
     id: '2',
     sender: 'alex',
-    timestamp: '12:38',
+    timestamp: '2026-01-21T12:38:00.000000Z',
     content: 'The keyboard shortcuts are working perfectly now',
     reactions: [{ emoji: '✅', count: 2 }],
   },
   {
     id: '3',
     sender: 'sarah',
-    timestamp: '12:35',
+    timestamp: '2026-01-21T12:35:00.000000Z',
     content: 'Can we review the search implementation today?',
     forwardedMessage: {
       from: 'dev',
       originalSender: 'timur',
-      timestamp: '12:10',
+      timestamp: '2026-01-21T12:10:00.000000Z',
       content: 'textsdfsdasdfasdfasdf',
     },
     replyCount: 2,
@@ -136,7 +136,7 @@ export const mockMessages: Message[] = [
   {
     id: '4',
     sender: 'mike',
-    timestamp: '12:30',
+    timestamp: '2026-01-21T12:30:00.000000Z',
     content: 'Here are the updated specs',
     attachment: {
       name: 'report.pdf',
@@ -147,14 +147,14 @@ export const mockMessages: Message[] = [
   {
     id: '5',
     sender: 'timur',
-    timestamp: '12:15',
+    timestamp: '2026-01-21T12:15:00.000000Z',
     content: 'Remember to update your status before leaving',
   },
 
   {
     id: '1',
     sender: 'timur',
-    timestamp: '12:41',
+    timestamp: '2026-01-21T12:41:00.000000Z',
     content:
       'Hey team, just pushed the new terminal UI design. What do you think?',
     reactions: [
@@ -166,19 +166,19 @@ export const mockMessages: Message[] = [
   {
     id: '2',
     sender: 'alex',
-    timestamp: '12:38',
+    timestamp: '2026-01-21T12:38:00.000000Z',
     content: 'The keyboard shortcuts are working perfectly now',
     reactions: [{ emoji: '✅', count: 2 }],
   },
   {
     id: '3',
     sender: 'sarah',
-    timestamp: '12:35',
+    timestamp: '2026-01-21T12:35:00.000000Z',
     content: 'Can we review the search implementation today?',
     forwardedMessage: {
       from: 'dev',
       originalSender: 'timur',
-      timestamp: '12:10',
+      timestamp: '2026-01-21T12:10:00.000000Z',
       content: 'textsdfsdasdfasdfasdf',
     },
     replyCount: 2,
@@ -186,7 +186,7 @@ export const mockMessages: Message[] = [
   {
     id: '4',
     sender: 'mike',
-    timestamp: '12:30',
+    timestamp: '2026-01-21T12:30:00.000000Z',
     content: 'Here are the updated specs',
     attachment: {
       name: 'report.pdf',
@@ -197,7 +197,7 @@ export const mockMessages: Message[] = [
   {
     id: '5',
     sender: 'timur',
-    timestamp: '12:15',
+    timestamp: '2026-01-21T12:15:00.000000Z',
     content: 'Remember to update your status before leaving',
   },
 ]

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { MessageItem } from '@/views/chat/components'
 import { Message } from '../types'
 
@@ -8,6 +8,16 @@ interface ChatTimelineProps {
 
 export function ChatTimeline({ messages }: ChatTimelineProps) {
   const [messageList, setMessageList] = useState<Message[]>(messages)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setMessageList(messages)
+  }, [messages])
+
+  useEffect(() => {
+    const el = scrollContainerRef.current
+    if (el) el.scrollTop = el.scrollHeight
+  }, [messageList])
 
   const handleReactionClick = (messageId: string, emoji: string) => {
     setMessageList(prevMessages =>
@@ -32,7 +42,10 @@ export function ChatTimeline({ messages }: ChatTimelineProps) {
   }
 
   return (
-    <div className="flex flex-col flex-1 gap-1 overflow-y-auto">
+    <div
+      ref={scrollContainerRef}
+      className="flex flex-col flex-1 gap-1 overflow-y-auto scrollbar-hide"
+    >
       {messageList.map(message => (
         <MessageItem
           key={message.id}
