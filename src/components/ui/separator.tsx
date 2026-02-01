@@ -14,7 +14,7 @@ function Separator({
     <hr
       data-slot="separator"
       className={classNames(
-        'shrink-0 border-border',
+        'shrink-0 border border-border',
         orientation === 'horizontal'
           ? 'h-px w-full border-t'
           : 'h-full w-px border-l',

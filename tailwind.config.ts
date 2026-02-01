@@ -6,7 +6,7 @@ export default {
     extend: {
       fontSize: {
         xs: ['0.625rem', { lineHeight: '0.9625rem' }], // 10px / 15.4px
-        sm: ['0.6875rem', { lineHeight: '0.9625rem' }], // 11px / 15.4px
+        sm: ['0.75rem', { lineHeight: '0.779rem' }], // 11px / 15.4px
         base: ['0.8125rem', { lineHeight: '1.1375rem' }], // 13px / 18.2px
         md: ['0.875rem', { lineHeight: '1.225rem' }], // 14px / 19.6px
       },
