@@ -27,3 +27,12 @@ export interface StatItemProps {
 export interface StatsBlockProps {
   items: StatItem[]
 }
+
+export interface OutlineLink {
+  label: string
+  to: string
+}
+
+export interface OutlineBlockProps {
+  items: OutlineLink[]
+}

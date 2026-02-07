@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 
-import { Section } from './Section'
+import { Section } from '../Section'
 import { Chats } from './Chats'
 import { Contacts } from './Contacts'
 import { Feeds } from './Feeds'

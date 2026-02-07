@@ -1,4 +1,4 @@
-import { type InfoBlockItem, type StatItem } from './types'
+import { type InfoBlockItem, type OutlineLink, type StatItem } from './types'
 
 export const mockPost: InfoBlockItem = {
   title: 'Q4 Development Roadmap',
@@ -17,4 +17,10 @@ export const mockStats: StatItem[] = [
       { emoji: '📌', count: 3 },
     ],
   },
+]
+
+export const mockOutlineLinks: OutlineLink[] = [
+  { label: 'Introduction', to: '#introduction' },
+  { label: 'Key Features', to: '#key-features' },
+  { label: 'Next Steps', to: '#next-steps' },
 ]

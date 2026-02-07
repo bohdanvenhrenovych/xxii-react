@@ -1,5 +1,5 @@
 import { classNames } from '@/lib/utils'
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+import { type ButtonHTMLAttributes, forwardRef } from 'react'
 
 interface ReactionButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   emoji: string

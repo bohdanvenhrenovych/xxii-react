@@ -1,8 +1,9 @@
-import { Section } from '../Sidebar/Section'
+import { Section } from '../Section'
 import { Separator } from '../ui/separator'
 import { InfoBlock } from './InfoBlock'
+import { OutlineBlock } from './OutlineBlock'
 import { StatsBlock } from './StatsBlock'
-import { mockPost, mockStats } from './mock-data'
+import { mockOutlineLinks, mockPost, mockStats } from './mock-data'
 
 export function RightSidebar() {
   return (
@@ -11,6 +12,10 @@ export function RightSidebar() {
       <Separator />
       <Section title="Stats" className="p-2 gap-1">
         <StatsBlock items={mockStats} />
+      </Section>
+      <Separator />
+      <Section title="Outline" className="p-2 gap-1">
+        <OutlineBlock items={mockOutlineLinks} />
       </Section>
       <Separator />
     </aside>
