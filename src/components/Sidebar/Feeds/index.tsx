@@ -20,7 +20,7 @@ export function Feeds({ activeFeedId }: FeedsProps) {
 }
 
 export type { Feed, FeedItemProps } from './types'
-export { mockFeeds } from './mock-data'
+export { getFeedById, mockFeeds } from './mock-data'
 export {
   FEED_ICONS,
   getFeedIconSrc,

@@ -22,3 +22,7 @@ export const mockChats: Chat[] = [
     lastActivity: '11:20',
   },
 ]
+
+export function getChatById(chatId: string): Chat | undefined {
+  return mockChats.find(c => c.id === chatId)
+}

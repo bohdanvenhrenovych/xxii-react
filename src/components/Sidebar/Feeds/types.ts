@@ -6,6 +6,7 @@ export interface Feed {
   id: string
   name: string
   icon: FeedIconKey
+  topic?: string
   unreadCount?: number
   lastActivity: string
 }

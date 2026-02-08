@@ -17,3 +17,15 @@ export const mockFolders: Folder[] = [
     children: [{ id: 'old-chats', name: 'old-chats' }],
   },
 ]
+
+export function getFolderById(folderId: string): Folder | undefined {
+  return mockFolders.find(f => f.id === folderId)
+}
+
+export function getFolderChildName(
+  folderId: string,
+  itemId: string
+): string | undefined {
+  const folder = getFolderById(folderId)
+  return folder?.children.find(c => c.id === itemId)?.name
+}

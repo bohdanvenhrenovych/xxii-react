@@ -20,7 +20,7 @@ export function Chats({ activeChatId }: ChatsProps) {
 }
 
 export type { Chat, ChatItemProps } from './types'
-export { mockChats } from './mock-data'
+export { getChatById, mockChats } from './mock-data'
 export {
   CHAT_ICONS,
   getChatIconSrc,

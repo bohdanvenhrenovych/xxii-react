@@ -21,15 +21,13 @@ const rowClassName = (isActive: boolean) =>
     isActive ? 'border-accent-orange bg-card-hover' : 'border-transparent'
   )
 
-export function SidebarListItem({
+const Content = ({
   icon,
   label,
   unreadCount,
   timestamp,
-  isActive = false,
-  to,
-}: SidebarListItemProps) {
-  const content = (
+}: SidebarListItemProps) => {
+  return (
     <>
       <div className="shrink-0 flex items-center gap-3">{icon}</div>
       <Typography variant="itemName" wrap={false} className="flex-1">
@@ -45,14 +43,37 @@ export function SidebarListItem({
       </div>
     </>
   )
+}
 
+export function SidebarListItem({
+  icon,
+  label,
+  unreadCount,
+  timestamp,
+  isActive = false,
+  to,
+}: SidebarListItemProps) {
   if (to) {
     return (
       <Link to={to} className={rowClassName(isActive)}>
-        {content}
+        <Content
+          icon={icon}
+          label={label}
+          unreadCount={unreadCount}
+          timestamp={timestamp}
+        />
       </Link>
     )
   }
 
-  return <div className={rowClassName(isActive)}>{content}</div>
+  return (
+    <div className={rowClassName(isActive)}>
+      <Content
+        icon={icon}
+        label={label}
+        unreadCount={unreadCount}
+        timestamp={timestamp}
+      />
+    </div>
+  )
 }

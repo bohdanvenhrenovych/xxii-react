@@ -52,7 +52,7 @@ export function Folders({ activeFolderId, activeItemId }: FoldersProps) {
 }
 
 export type { Folder, FolderChild, FolderIconId } from './types'
-export { mockFolders } from './mock-data'
+export { getFolderById, getFolderChildName, mockFolders } from './mock-data'
 export {
   FOLDER_ICONS,
   FOLDER_CHILD_ICON_SRC,

@@ -28,3 +28,7 @@ export const mockContacts: Contact[] = [
     lastSeen: 'yesterday',
   },
 ]
+
+export function getContactById(contactId: string): Contact | undefined {
+  return mockContacts.find(c => c.id === contactId)
+}

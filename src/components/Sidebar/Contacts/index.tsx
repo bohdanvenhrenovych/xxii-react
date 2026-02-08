@@ -20,4 +20,4 @@ export function Contacts({ activeContactId }: ContactsProps) {
 }
 
 export type { Contact, ContactItemProps } from './types'
-export { mockContacts } from './mock-data'
+export { getContactById, mockContacts } from './mock-data'
