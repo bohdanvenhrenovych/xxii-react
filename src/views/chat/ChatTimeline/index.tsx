@@ -1,56 +1,30 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { MessageItem } from '@/views/chat/components'
-import { Message } from '../types'
+import type { Message } from '../types'
 
 interface ChatTimelineProps {
   messages: Message[]
+  onReactionClick?: (messageId: string, emoji: string) => void
 }
 
-export function ChatTimeline({ messages }: ChatTimelineProps) {
-  const [messageList, setMessageList] = useState<Message[]>(messages)
+export function ChatTimeline({ messages, onReactionClick }: ChatTimelineProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    setMessageList(messages)
-  }, [messages])
 
   useEffect(() => {
     const el = scrollContainerRef.current
     if (el) el.scrollTop = el.scrollHeight
-  }, [messageList])
-
-  const handleReactionClick = (messageId: string, emoji: string) => {
-    setMessageList(prevMessages =>
-      prevMessages.map(msg => {
-        if (msg.id !== messageId || !msg.reactions) return msg
-
-        const reactionIndex = msg.reactions.findIndex(r => r.emoji === emoji)
-        if (reactionIndex === -1) return msg
-
-        const updatedReactions = [...msg.reactions]
-        updatedReactions[reactionIndex] = {
-          ...updatedReactions[reactionIndex],
-          count: updatedReactions[reactionIndex].count + 1,
-        }
-
-        return {
-          ...msg,
-          reactions: updatedReactions,
-        }
-      })
-    )
-  }
+  }, [messages])
 
   return (
     <div
       ref={scrollContainerRef}
       className="flex flex-col flex-1 gap-1 overflow-y-auto scrollbar-hide"
     >
-      {messageList.map(message => (
+      {messages.map(message => (
         <MessageItem
           key={message.id}
           message={message}
-          onReactionClick={handleReactionClick}
+          onReactionClick={onReactionClick ?? (() => {})}
         />
       ))}
     </div>

@@ -25,6 +25,11 @@ const srcById = new Map<FeedIconId, string>(
 
 export function getFeedIconSrc(id: FeedIconId): string {
   const src = srcById.get(id)
-  if (!src) throw new Error(`Unknown feed icon: ${id}`)
+
+  if (!src) {
+    console.warn(`Unknown feed icon: ${id}`)
+    return 'path/to/default-icon.svg'
+  }
+
   return src
 }

@@ -32,11 +32,7 @@ export function MessagePanel({
   onEmoji,
   onPoll,
 }: MessagePanelProps) {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    setIsMobile(isMobilePlatform())
-  }, [])
+  const isMobile = isMobilePlatform()
 
   const formMethods = useForm<MessageFormValues>({
     resolver: zodResolver(messageSchema),

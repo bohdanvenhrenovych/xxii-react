@@ -30,6 +30,7 @@ export function Form<FormValues extends FieldValues>({
   return (
     <FormProvider<FormValues> {...formMethods}>
       <form
+        {...rest}
         noValidate
         onSubmit={
           onSubmit
@@ -39,7 +40,6 @@ export function Form<FormValues extends FieldValues>({
             : undefined
         }
         onReset={() => formMethods.reset()}
-        {...rest}
       >
         {children}
       </form>
